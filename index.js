@@ -11,6 +11,8 @@ const homeController = require('./controllers/home')
 const homeController = require('./controllers/storePost')
 const homeController = require('./controllers/getPost')
 const validateMiddleWare = require('./middleware/validationMiddleware')
+const newUserController = require('./controllers/newUser')
+const storeUserController = require('./controllers/')
 
 app.use(bodyParser.json())
 app.use(fileUpload())
@@ -25,7 +27,7 @@ app.listen(4000, () => {
 app.get('/', homeController)
 app.get('/post/:id', getPostController)
 app.post('/posts/store', storePostController)
-
+app.get('/auth/register', newUserController)
 app.get('/posts/new', newPostController)
 
 
